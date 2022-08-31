@@ -1,0 +1,155 @@
+.header {
+  grid-area: header;
+  position: sticky;
+  margin-bottom: 2rem;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  min-height: 10vh;
+  padding: 5px;
+  background: var(--black);
+  z-index: 1;
+  border-bottom: 1px solid var(--redLogo);
+}
+
+.banner {
+  display: block;
+}
+.centroheader {
+  padding-top: 20px;
+}
+
+.logoText {
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.mainLogo {
+  font-size: 31px;
+  font-family: "Octin College Bold";
+  letter-spacing: 0.18em; /* delicia de iluminacion */
+  text-shadow: 0 0 100px var(--white);
+
+  /* Clip Background Image */
+
+  background: url(../images/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Animate Background Image */
+
+  -webkit-text-fill-color: transparent;
+  animation: aitf 80s linear infinite;
+
+  /* Activate hardware acceleration for smoother animations */
+
+  transform: translate3d(0, 10, 0);
+  backface-visibility: hidden;
+}
+
+/* Animate Background Image */
+
+@keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.nav {
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: -35px;
+  color: black;
+  font-family: "Octin College Bold";
+}
+
+.button {
+  letter-spacing: 0.18em;
+  text-shadow: 0 0 1px var(--black);
+  display: block;
+  margin-right: 6px;
+  letter-spacing: 0.1em;
+  color: var(--black);
+  padding: 5px 6px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.button:hover {
+  transition: 0.3s;
+  text-shadow: 0 0 1.3px var(--white);
+
+  color: var(--redLogo);
+}
+.active {
+  color: var(--red);
+}
+
+/**************************************************************/
+/***************1024p******************************************/
+/**************************************************************/
+/* 
+@media only screen and (max-whidth: 1024px){
+
+
+} */
+
+/**************************************************************/
+/***************800px******************************************/
+/**************************************************************/
+/* 
+@media only screen and (max-whidth: 800px){
+
+
+} */
+
+/**************************************************************/
+/***************480px******************************************/
+/**************************************************************/
+
+/* @media only screen and (max-whidth: 480px){
+
+
+} */
+
+
+@media screen and (max-width: 680px) {
+  .nav {
+    justify-content: center;
+  }
+
+  .banner {
+    margin-bottom: 2rem;
+  }
+  .buttons {
+    margin-bottom: 1rem;
+  }
+  .button {
+    font-size: 14px !important;
+  }
+}
+/**************************************************************/
+/***************480px******************************************/
+/**************************************************************/
+
+@media only screen and (max-width: 480px) {
+  .button {
+    font-size: 12px !important;
+  }
+
+  .mainLogo {
+    font-size: 26px;
+  }
+}

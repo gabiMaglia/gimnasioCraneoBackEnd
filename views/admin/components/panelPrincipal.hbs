@@ -1,0 +1,72 @@
+<body class="mainPanelPrincipal">
+  
+  <div class="container holder ">
+
+    <h1 class="saludo">BIENVENIDO {{usuario}} </h1>
+
+    {{#if permiso }}
+
+    <div class="inputPanel">
+
+      <a class="inputBtn" href="/admin/alumnos">
+        <p>Alumnos</p>
+      </a>
+
+      <a class="inputBtn" href="/admin/docentes">
+        <p>Docentes</p>
+      </a>
+
+      <a class="inputBtn"  href="/admin/proximamente">
+        <p>Cuotas</p>
+      </a>
+
+      <a href="/admin/horarios" class="inputBtn">
+        <p>Horarios</p>
+      </a>
+
+      <a href="/admin/rutinas" class="inputBtn">
+        <p>Rutinas</p>
+      </a>
+
+      <a class="inputBtn" href="/admin/proximamente">
+        <p>Productos</p>
+      </a>
+
+      <a class="inputBtn" href="/admin/proximamente">
+        <p>Horario de atencion</p>
+      </a>
+
+      <a class="inputBtn" href="/admin/proximamente">
+        <p>Galeria</p>
+      </a>
+
+      <a class="inputBtn" href="/admin/login/logout">
+        <p> Cerrar Sesion<i class="fa fa-sing-out"></i></p>
+      </a>
+
+    </div>
+
+    {{else}}
+      <div class="inputPanel">
+      <a class="inputBtn" href="/admin/alumnos">
+        <p>Alumnos</p>
+      </a>
+      
+      
+      <a href="/admin/horarios" class="inputBtn">
+        <p>Horarios</p>
+      </a>
+
+      <a href="/admin/rutinas" class="inputBtn">
+        <p>Rutinas</p>
+      </a>
+
+      <a class="inputBtn" href="/admin/login/logout">
+        <p> Cerrar Sesion<i class="fa fa-sing-out"></i></p>
+      </a>
+    </div>
+    {{/if}}
+  </div>
+
+  </div>
+</body>

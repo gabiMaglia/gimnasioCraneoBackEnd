@@ -1,0 +1,49 @@
+.mainHorarios {
+  grid-area: main;
+}
+
+#thead {
+  background-color: var(--redLogo);
+  border: black;
+  padding-bottom: 15px;
+}
+
+#tbody {
+  background-color: var(--blackTrans);
+  color: white;
+  border: none;
+}
+
+tr:hover #tbody {
+  color: var(--black);
+}
+
+#head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#head div {
+  width: auto;
+}
+
+.btn {
+  color: white;
+}
+
+.addForm {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: flex-end;
+  width: 100%;
+}
+
+.drop {
+  height: 38px;
+}
+
+.but {
+  margin-left: auto;
+}

@@ -1,0 +1,94 @@
+<div class="container holder">
+  <div id="head" class="row">
+
+    <div>
+      <h3>Listado de alumnos</h3>
+    </div>
+    <div>
+      <a href="/admin/alumnos/agregar" class="btn btn-danger">
+        <i class="fa fa-plus" id="addBtn">Nuevo</i>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="row alumnosBoard">
+    <div class="col">
+      <table class="table table-hover">
+        <thead class="thead">
+          <tr>
+            <th class="table-light" id="thead" scope="col">Nombre</th>
+            <th class="table-light" id="thead" scope="col">Apellido</th>
+            <th class="table-light hidden3" id="thead" scope="col">DNI</th>
+            <th class="table-light hidden2" id="thead" scope="col">Telefono</th>
+            <th class="table-light hidden2" id="thead" scope="col">e-mail</th>
+            <th class="table-light hidden1" id="thead" scope="col">Horario</th>
+            <th
+              class="table-light"
+              id="thead"
+              scope="col"
+              style="text-align: center ;"
+            >Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each alumnos}}
+            <tr>
+
+              <th class="table-light" id="tbody" scope="row">{{nombre}}</th>
+              <th class="table-light" id="tbody" scope="row">{{apellido}}</th>
+              <th
+                class="table-light hidden3"
+                id="tbody"
+                scope="row"
+              >{{dni}}</th>
+              <th
+                class="table-light hidden2"
+                id="tbody"
+                scope="row"
+              >{{telefono}}</th>
+              <th
+                class="table-light hidden2"
+                id="tbody"
+                scope="row"
+              >{{email}}</th>
+              <th
+                class="table-light hidden1"
+                id="tbody"
+                scope="row"
+              >{{horario}}</th>
+
+              <td style="border: none;" class="text-center">
+                <a
+                  href="/admin/alumnos/modificar/{{id_alumno}}"
+                  id="mods"
+                  class="btn btn-m btn-secondary"
+                >
+                  <i class="fa fa-pencil"></i>
+                </a>
+
+                <a
+                  href="/admin/alumnos/eliminar/{{id_alumno}}"
+                  id="mods"
+                  class="btn btn-m btn-secondary"
+                >
+                  <i class="fa fa-trash"></i>
+                </a>
+
+                <a
+                  href="/admin/alumnos/perfilPersonal/{{id_alumno}}"
+                  id="mods"
+                  class="btn btn-m btn-secondary"
+                >
+                  <i class="fa fa-eye"></i>
+                </a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>

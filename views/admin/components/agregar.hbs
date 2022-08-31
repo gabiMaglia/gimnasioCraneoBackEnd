@@ -1,0 +1,337 @@
+{{#if alumno}}
+  <div class="container">
+    <div style="text-align: right ;" class="holder">
+      <!-- Atras Button -->
+      <a href="/admin/alumnos/"><button
+          class="btn btn-danger"
+        >Atras</button></a>
+    </div>
+    <form
+      action="/admin/alumnos/agregar"
+      method="post"
+      class="holder"
+      enctype="multipart/form-data"
+    >
+
+      <div class="form-group">
+        <!-- Nombre -->
+        <label for="nombre" class="control-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          placeholder="Nombre del alumno"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Apellido -->
+        <label for="apellido" class="control-label">Apellido</label>
+        <input
+          type="text"
+          class="form-control"
+          id="apellido"
+          name="apellido"
+          placeholder="Apellido del alumno"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- DNI -->
+        <label for="dni" class="control-label">DNI</label>
+        <input
+          type="number"
+          class="form-control"
+          id="dni"
+          name="dni"
+          placeholder="Numero de documento"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Telefono -->
+        <label for="apellido" class="control-label">Telefono</label>
+        <input
+          type="text"
+          class="form-control"
+          id="telefono"
+          name="telefono"
+          placeholder="Telefono"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Direccion -->
+        <label for="direccion" class="control-label">Direccion</label>
+        <input
+          type="text"
+          class="form-control"
+          id="direccion"
+          name="direccion"
+          placeholder="Calle/Barrio/Ciudad/Pais"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- e-mail -->
+        <label for="email" class="control-label">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="XX@XX.XXX"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Facebook -->
+        <label for="facebookAdd" class="control-label">Direccion de Facebook</label>
+        <input
+          type="text"
+          class="form-control"
+          id="facebookAdd"
+          name="facebookAdd"
+          placeholder="/example"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- instagram -->
+        <label for="instagramAdd" class="control-label">Direccion de instagram</label>
+        <input
+          type="text"
+          class="form-control"
+          id="instagramAdd"
+          name="instagramAdd"
+          placeholder="/example"
+        />
+      </div>
+      <div class="form-group">
+        <!-- Dia de Ingreso -->
+        <label for="fecha de inscripcion" class="control-label">Fecha de
+          Inscripcion</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fecha_inscripcion"
+          name="fecha_inscripcion"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Horario -->
+        <label for="horario" class="control-label">Horario</label>
+        <select class="form-control" id="horario" name="horario">
+          <option value="">Selecciona..</option>
+          {{#each arrayHorarios}}
+            <option value={{this}}>{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <!-- Observaciones -->
+        <label for="observaciones" class="control-label">Observaciones</label>
+        <input
+          type="text"
+          class="form-control"
+          id="observaciones"
+          name="observaciones"
+          placeholder="Observaciones"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Foto-->
+        <label for="picture" class="control-label">Foto</label>
+        <input type="file" class="form-control" id="foto" name="foto" />
+      </div>
+
+      <div class="form-group">
+        <!-- Agregado por -->
+        <label for="observaciones" class="control-label">Agregado por</label>
+        <input
+          type="text"
+          class="form-control"
+          id="observaciones"
+          name="agregado_por"
+          value={{usuario}}
+          readonly
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-danger mt-3 mb-5">Cargar</button>
+      </div>
+
+      {{#if error}}
+        <h4 style="color: white;">{{message}}</h4>
+      {{/if}}
+    </form>
+
+  </div>
+{{/if}}
+
+{{#if docente}}
+  <div class="container">
+
+    <div style="text-align: right ;" class="holder">
+      <!-- Atras Button -->
+      <a href="/admin/docentes/"><button
+          class="btn btn-danger"
+        >Atras</button></a>
+    </div>
+    <form
+      action="/admin/docentes/agregar"
+      method="post"
+      class="holder"
+      enctype="multipart/form-data"
+    >
+
+      <div class="inputs">
+        <div class="form-group">
+          <!-- Nombre -->
+          <label for="nombre" class="control-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre del docente"
+          />
+        </div>
+        <div class="form-group">
+          <!-- Apellido -->
+          <label for="apellido" class="control-label">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            id="apellido"
+            name="apellido"
+            placeholder="Apellido del docente"
+          />
+        </div>
+        <div class="form-group">
+          <!-- titulo -->
+          <label for="titulo" class="control-label">Titulo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="titulo"
+            name="titulo"
+            placeholder="Que hace/es/tarea desempeña"
+          />
+        </div>
+        <div class="form-group">
+          <!-- DNI -->
+          <label for="dni" class="control-label">DNI</label>
+          <input
+            type="number"
+            class="form-control"
+            id="dni"
+            name="dni"
+            placeholder="Numero de documento"
+          />
+        </div>
+        <div class="form-group">
+          <!-- Telefono -->
+          <label for="apellido" class="control-label">Telefono</label>
+          <input
+            type="text"
+            class="form-control"
+            id="telefono"
+            name="telefono"
+            placeholder="Telefono"
+          />
+        </div>
+        <div class="form-group">
+          <!-- Direccion -->
+          <label for="direccion" class="control-label">Direccion</label>
+          <input
+            type="text"
+            class="form-control"
+            id="direccion"
+            name="direccion"
+            placeholder="Calle/Barrio/Ciudad/Pais"
+          />
+        </div>
+        <div class="form-group">
+          <!-- e-mail -->
+          <label for="email" class="control-label">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="XX@XX.XXX"
+          />
+        </div>
+        <div class="form-group">
+          <!-- Instagram address -->
+          <label
+            for="fecha de inscripcion"
+            class="control-label"
+          >Instagram</label>
+          <input
+            type="text"
+            class="form-control"
+            id="instagramAdd"
+            name="instagramAdd"
+          />
+        </div>
+        <div class="form-group">
+          <!-- Facebook address -->
+          <label
+            for="Direccion de Facebook"
+            class="control-label"
+          >Facebook</label>
+          <input
+            type="text"
+            class="form-control"
+            id="facebookAdd"
+            name="facebookAdd"
+          />
+        </div>
+        <div class="form-group">
+          <!-- Horario -->
+          <label for="horario" class="control-label">Horario</label>
+          <input
+            type="text"
+            class="form-control"
+            id="horario"
+            name="horario"
+            placeholder="XX:XX - XX:XX"
+          />
+        </div>
+        <div class="form-group">
+          <!-- Foto-->
+          <label for="foto" class="control-label">Foto</label>
+          <input type="file" class="form-control" id="foto" name="foto" />
+        </div>
+        <div class="form-group">
+          <!-- Selector de Permisos -->
+          <div class="col-1">
+            <label for="permisos" class="control-label">Permisos</label>
+            <select class="drop" name="permiso">
+              <option value="" selected>Selecciona..</option>
+              <option value="docente">Docente</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-danger mt-3 mb-5">Cargar</button>
+      </div>
+
+      {{#if error}}
+        <h4 style="color: white;">{{message}}</h4>
+      {{/if}}
+    </form>
+  </div>
+{{/if}}

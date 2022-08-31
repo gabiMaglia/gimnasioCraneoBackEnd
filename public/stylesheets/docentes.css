@@ -1,0 +1,93 @@
+#addBtn{
+    font-family: "Octin College Bold";
+}
+#thead {
+    background-color: var(--redLogo);
+    border: black;
+   padding-bottom: 15px;
+    
+}
+
+#tbody{
+    background-color:var(--blackTrans);
+    color: white;
+    border: none;
+}
+
+tr:hover #tbody{
+    color: var(--black);
+}
+
+#head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+}
+
+#head div{
+    width: auto;
+}
+
+.btn{
+   color: white;
+}
+
+
+@media only screen and (max-width: 1200px){
+    .hidden1{
+      display: none;
+    }
+    
+    } 
+    
+    /**************************************************************/
+    /***************800px******************************************/
+    /**************************************************************/
+    
+    @media only screen and (max-width: 1024px){
+      .hidden2 {
+        display: none;
+      }
+    }
+    
+    /**************************************************************/
+    /***************480px******************************************/
+    /**************************************************************/
+    
+    @media only screen and (max-width: 495px){
+      .hidden3{
+        display: none;
+      }
+      .table-light{
+        font-size: 13px !important;
+      }
+    
+      td .btn{
+        font-size: 7px !important;
+      }
+      td .btn i{
+        font-size: 12px !important;
+      }
+    
+    }
+    
+    @media only screen and (max-width: 365px){
+      td .btn{
+        font-size: 5px !important;
+      }
+      td .btn i{
+        font-size: 10px !important;
+      }
+      
+    }
+    @media only screen and (max-width: 349px){
+      td .btn{
+        font-size: 3px !important;
+      }
+      td .btn i{
+        font-size: 8px !important;
+      }
+      
+    }

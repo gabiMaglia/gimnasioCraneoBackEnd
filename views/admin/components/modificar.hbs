@@ -1,0 +1,301 @@
+{{#if alumno}}
+<div class="container" style="margin: 50px auto;">
+
+    <h4>Modificar el alumno</h4>
+    <div style="text-align: right;" class="holder">
+        <!-- Atras Button -->
+        <a href="/admin/alumnos/"><button class="btn btn-danger">Atras</button></a>
+    </div>
+    <form action="/admin/alumnos/modificar" method="post" class="holder" enctype="multipart/form-data">
+
+
+
+        <input type="hidden" value="{{alumnoData.id_alumno}}" name="alumno_id" />
+
+
+        <div class="form-group">
+            <!-- Nombre -->
+            <label for="nombre" class="control-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del alumno"
+                value="{{alumnoData.nombre}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- Apellido -->
+            <label for="apellido" class="control-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido del alumno"
+                value="{{alumnoData.apellido}}" />
+        </div>
+
+
+
+        <div class="form-group">
+            <!-- DNI -->
+            <label for="dni" class="control-label">DNI</label>
+            <input type="number" class="form-control" id="dni" name="dni" placeholder="Numero de documento"
+                value="{{alumnoData.dni}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- Telefono -->
+            <label for="apellido" class="control-label">Telefono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono"
+                value="{{alumnoData.telefono}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- Direccion -->
+            <label for="direccion" class="control-label">Direccion</label>
+            <input type="text" class="form-control" id="direccion" name="direccion"
+                placeholder="Calle/Barrio/Ciudad/Pais" value="{{alumnoData.direccion}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- e-mail -->
+            <label for="email" class="control-label">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="XX@XX.XXX"
+                value="{{alumnoData.email}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- Facebook -->
+            <label for="FacebookAdd" class="control-label">Direccion de Facebook</label>
+            <input type="text" class="form-control" id="facebookAdd" name="facebookAdd" placeholder="/example"
+                value="{{alumnoData.facebookAdd}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- Instagram -->
+            <label for="email" class="control-label">Direccion de instagram</label>
+            <input type="text" class="form-control" id="instagramAdd" name="instagramAdd" placeholder="/example"
+                value="{{alumnoData.instagramAdd}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- Dia de Ingreso -->
+            <label for="fecha de inscripcion" class="control-label">Fecha de
+                Inscripcion</label>
+            <input type="date" class="form-control" id="fecha_inscripcion" name="fecha_inscripcion"
+                value="{{alumnoData.fecha_inscripcion}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- Horario -->
+            <label for="horario" class="control-label">Horario</label>
+            <select class="form-control" id="horario" name="horario">
+                <option value={{alumnoData.horario}}>{{alumnoData.horario}}</option>
+                {{#each arrayHorarios}}
+                <option value={{this}}>{{this}}</option>
+                {{/each}}
+
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <!-- Observaciones -->
+            <label for="observaciones" class="control-label">Observaciones</label>
+            <input type="text" class="form-control" id="observaciones" name="observaciones" placeholder="Observaciones"
+                value="{{alumnoData.observaciones}}" />
+        </div>
+
+        <div class="form-group">
+            <!-- Foto-->
+            <label for="foto" class="control-label">Foto</label>
+            <input type="file" class="form-control" id="foto" name="foto" />
+            <p class="mt-2 "><label for="img_delete"><input type="checkbox" name="img_delete" id="img_delete"
+                        value="1">Eliminar imagen actual?</label></p>
+                        
+            <input type="hidden" name="img_original" value="{{alumnoData.foto}}">
+
+        </div>
+
+
+        <div class="form-group mt-5">
+            <!-- Modificado por -->
+            <label for="observaciones" class="control-label">Modificado por</label>
+            <input type="text" class="form-control" id="modificado_por" name="modificado_por" value={{usuario}}
+                readonly />
+        </div>
+
+        <div class="form-group mt-3">
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-danger">Modificar</button>
+        </div>
+
+        {{#if error}}
+        <h4 style="color: white;">{{message}}</h4>
+        {{/if}}
+
+    </form>
+
+</div>
+{{/if}}
+
+
+{{#if docente}}
+<div class="container" style="margin: 50px auto;">
+    <div style="text-align: right;" class="holder">
+        <!-- Atras Button -->
+        <a href="/admin/docentes/"><button class="btn btn-danger">Atras</button></a>
+    </div>
+    <form action="/admin/docentes/modificar" method="post" class="holder" enctype="multipart/form-data">
+
+
+
+        <input type="hidden" value="{{docenteData.id_docente}}" name="id_docente" />
+
+        <div class="inputs">
+            <div class="form-group">
+                <!-- Nombre -->
+                <label for="nombre" class="control-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{docenteData.nombre}}"
+                    placeholder="Nombre del docente" />
+            </div>
+            <div class="form-group">
+                <!-- Apellido -->
+                <label for="apellido" class="control-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" value="{{docenteData.apellido}}"
+                    placeholder="Apellido del docente" />
+            </div>
+                    <div class="form-group">
+            <!-- titulo -->
+            <label for="titulo" class="control-label">Titulo</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Que hace"
+                value="{{docenteData.titulo}}" />
+        </div>
+            <div class="form-group">
+                <!-- DNI -->
+                <label for="dni" class="control-label">DNI</label>
+                <input type="number" class="form-control" id="dni" name="dni" value="{{docenteData.dni}}"
+                    placeholder="Numero de documento" />
+            </div>
+            <div class="form-group">
+                <!-- Telefono -->
+                <label for="apellido" class="control-label">Telefono</label>
+                <input type="text" class="form-control" id="telefono" name="telefono" value="{{docenteData.telefono}}"
+                    placeholder="Telefono" />
+            </div>
+            <div class="form-group">
+                <!-- Direccion -->
+                <label for="direccion" class="control-label">Direccion</label>
+                <input type="text" class="form-control" id="direccion" name="direccion"
+                    value="{{docenteData.direccion}}" placeholder="Calle/Barrio/Ciudad/Pais" />
+            </div>
+            <div class="form-group">
+                <!-- e-mail -->
+                <label for="email" class="control-label">Email</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{docenteData.email}}"
+                    placeholder="XX@XX.XXX" />
+            </div>
+            <div class="form-group">
+                <!-- Instagram address -->
+                <label for="fecha de inscripcion" class="control-label">Instagram</label>
+                <input type="text" class="form-control" id="instagramAdd" value="{{docenteData.instagramAdd}}"
+                    name="instagramAdd" />
+            </div>
+            <div class="form-group">
+                <!-- Facebook address -->
+                <label for="Direccion de Facebook" class="control-label">Facebook</label>
+                <input type="text" class="form-control" id="facebookAdd" value="{{docenteData.facebookAdd}}"
+                    name="facebookAdd" />
+            </div>
+            <div class="form-group">
+                <!-- Horario -->
+                <label for="horario" class="control-label">Horario</label>
+                <input type="text" class="form-control" id="horario" name="horario" value="{{docenteData.horario}}"
+                    placeholder="XX:XX - XX:XX" />
+            </div>
+        </div>
+        <div class=" form-group">
+                <!-- Selector de Permisos -->
+                <div class="col-1">
+                    <label for="permiso" class="control-label">Permisos</label>
+                    <select class="drop" name="permiso">
+                        <option value="" selected>Selecciona..</option>
+                        <option value="docente">Docente</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                </div>
+             </div>
+
+        <div class="form-group">
+            <!-- Foto-->
+            <label for="foto" class="control-label">Foto</label>
+            <input type="file" class="form-control" id="foto" name="foto" />
+            <p class="mt-2 "><label for="img_delete"><input type="checkbox" name="img_delete" id="img_delete"
+                        value="1">Eliminar imagen actual?</label></p>
+            <input type="hidden" name="img_original" value="{{docenteData.foto}}">
+
+        </div>
+
+        <div class="form-group mt-5">
+            <!-- Modificado por -->
+            <label for="observaciones" class="control-label">Modificado por</label>
+            <input type="text" class="form-control" id="modificado_por" name="modificado_por" value={{usuario}}
+                readonly />
+        </div>
+
+        <div class="form-group mt-3">
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-danger">Cargar</button>
+        </div>
+
+        {{#if error}}
+        <h4 style="color: white;">{{message}}</h4>
+        {{/if}}
+    </form>
+</div>
+{{/if}}
+
+
+{{#if horario}}
+<div>
+    <div class="container" style="margin: 50px auto;">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <h4 class="text-light">Modificar Horario</h4>
+                <div style="text-align: right;" class="holder">
+                    <!-- Atras Button -->
+                    <a href="/admin/horarios/"><button class="btn btn-danger">Atras</button></a>
+                </div>
+                <form action="/admin/horarios/modificar" method="post" class="holder">
+                    <input type="hidden" value="{{horarioData.id_horario}}" name="id_horario" />
+                    <div class="inputs">
+                        <div class="form-group">
+                            <!-- Dias -->
+                            <label for="nombre" class="control-label">Dias</label>
+                            <select class="drop" name="dias_dbcol" class="form-control" id="dias_dbcol">
+                                {{#if 'Lunes, Miercoles y Viernes' }}
+                                <option value="Martes-Jueves-Sabados">Martes-Jueves-Sabados</option>
+                                {{/if }}
+                                {{#if 'Martes, Jueves y Sabados'}}
+                                <option value="Lunes-Miercoles-Viernes">Lunes-Miercoles-Viernes</option>
+                                {{/if}}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <!-- Horas -->
+                            <label for="horas" class="control-label">Horas</label>
+                            <input type="text" class="form-control" id="horas_dbcol" name="horarios_dbcol"
+                                value="{{horarioData.horarios_dbcol}}" placeholder="horarios" />
+                        </div>
+                        <div class="form-group mt-5">
+                            <!-- Modificado por -->
+                            <label for="observaciones" class="control-label">Modificado por</label>
+                            <input type="text" class="form-control" id="modificado_por" name="modificado_por"
+                                value={{usuario}} readonly />
+                        </div>
+                        <div class="form-group mt-3">
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-danger">Cargar</button>
+                        </div>
+                        {{#if error}}
+                        <h4 style="color: white;">{{message}}</h4>
+                        {{/if}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}

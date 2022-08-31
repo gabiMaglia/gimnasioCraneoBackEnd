@@ -1,0 +1,376 @@
+{{#if alumno}}
+  <section style="background-color:var(--black);">
+    <div class="container py-5">
+      <div class="row pHead">
+        <div class="col">
+          <nav
+            aria-label="breadcrumb"
+            class="rounded-3 p-1 mb-4"
+            style="display: flex; justify-content: flex-end ;"
+          >
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a
+                  style="text-decoration: none; color:brown;"
+                  href="/admin/alumnos"
+                ><button class="button btn btn-sm btn-danger" title="Volver">
+                    Volver
+                  </button></a></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center bg-dark">
+              {{{pic}}}
+              <h5 class="my-3">{{alumnoData.nombre}}</h5>
+              <p class="text-muted mb-4">{{alumnoData.direccion}}</p>
+              <div class="d-flex justify-content-center mb-2">
+              </div>
+            </div>
+          </div>
+          <div class="card mb-4 mb-lg-0">
+            <div class="card-body p-0 bg-dark">
+              <ul class="list-group list-group-flush rounded-3">
+
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center p-3 bg-dark"
+                >
+                  <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                  <a
+                    class="link"
+                    href="https://www.instagram.com{{alumnoData.instagramAdd}}"
+                    target="_blank"
+                  > <p class="mb-0">{{alumnoData.instagramAdd}}</p></a>
+                </li>
+
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center p-3 bg-dark"
+                >
+                  <i
+                    class="fab fa-facebook-f fa-lg"
+                    style="color: #3b5998;"
+                  ></i>
+                  <a
+                    class="link"
+                    href="https://www.facebook.com{{alumnoData.facebookAdd}}"
+                    target="_blank"
+                  ><p class="mb-0">{{alumnoData.facebookAdd}}</p></a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="card mb-4">
+            <div class="card-body bg-dark">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Nombre completo</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.nombre}}
+                    {{alumnoData.apellido}}</p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">DNI</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.dni}} </p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Email</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.email}}</p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Telefono</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.telefono}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-body bg-dark">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Direccion</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.direccion}} </p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Fecha de Inscripcion</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.fecha_inscripcion}}
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Horario al que asiste</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.horario}}</p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Inscripto por</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.agregado_por}}</p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Observaciones</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{alumnoData.observaciones}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+        </div>
+
+        <div class="col-sm-8">
+          <div class="card mb-4 mb-md-0">
+            <div class="card-body bg-dark">
+              <p class="mb-4"><span
+                  class="text-primary font-italic me-1"
+                >Rutina</span>
+              </p>
+              <p class="mb-1" style="font-size: .77rem;">Ej 1</p>
+              <div class="progress rounded" style="height: 5px;">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 80%"
+                  aria-valuenow="80"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <p class="mt-4 mb-1" style="font-size: .77rem;">Ej 2</p>
+              <div class="progress rounded" style="height: 5px;">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 72%"
+                  aria-valuenow="72"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <p class="mt-4 mb-1" style="font-size: .77rem;">Ej 3</p>
+              <div class="progress rounded" style="height: 5px;">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 89%"
+                  aria-valuenow="89"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <p class="mt-4 mb-1" style="font-size: .77rem;">Ej 4</p>
+              <div class="progress rounded" style="height: 5px;">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 55%"
+                  aria-valuenow="55"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <p class="mt-4 mb-1" style="font-size: .77rem;">Ej 5</p>
+              <div class="progress rounded mb-2" style="height: 5px;">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  style="width: 66%"
+                  aria-valuenow="66"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{{/if}}
+
+{{#if docente}}
+  <section style="background-color:var(--black);">
+    <div class="container py-5">
+      <div class="row pHead">
+        <div class="col">
+          <nav
+            aria-label="breadcrumb"
+            class="rounded-3 p-1 mb-4"
+            style="display: flex; justify-content: flex-end ;"
+          >
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a
+                  style="text-decoration: none; color:brown;"
+                  href="/admin/docentes"
+                ><button class="button btn btn-sm btn-danger" title="Volver">
+                    Volver
+                  </button></a></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center bg-dark">
+              {{{pic}}}
+              <h5 class="my-3">{{docenteData.nombre}}</h5>
+              <p class="text-muted mb-4">{{docenteData.direccion}}</p>
+              <div class="d-flex justify-content-center mb-2">
+              </div>
+            </div>
+          </div>
+          <div class="card mb-4 mb-lg-0">
+            <div class="card-body p-0 bg-dark">
+              <ul class="list-group list-group-flush rounded-3">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center p-3 bg-dark"
+                >
+                  <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                  <a
+                    class="link"
+                    href="https://www.instagram.com{{docenteData.instagramAdd}}"
+                    target="_blank"
+                  >
+                    <p class="mb-0">{{docenteData.instagramAdd}}</p>
+                  </a>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center p-3 bg-dark"
+                >
+                  <i
+                    class="fab fa-facebook-f fa-lg"
+                    style="color: #3b5998;"
+                  ></i>
+                  <a
+                    class="link"
+                    href="https://www.facebook.com{{docenteData.facebookAdd}}"
+                    target="_blank"
+                  >
+                    <p class="mb-0">{{docenteData.facebookAdd}}</p>
+                  </a>
+
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="card mb-4">
+            <div class="card-body bg-dark">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Nombre completo</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{docenteData.nombre}}
+                    {{docenteData.apellido}}</p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">DNI</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{docenteData.dni}} </p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Email</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{docenteData.email}}</p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Telefono</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{docenteData.telefono}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <div class="card-body bg-dark">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Direccion</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{docenteData.direccion}} </p>
+                </div>
+              </div>
+
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Horario en el que trabaja</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{docenteData.horario}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+{{/if}}

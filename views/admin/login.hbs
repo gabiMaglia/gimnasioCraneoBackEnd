@@ -1,0 +1,23 @@
+<body class="mainLogin">
+  <div class="container">
+
+    <h1 class="title">Inicie Sesion</h1>
+
+    <form action="/admin/login" method="post" class="loginForm">
+
+      <label htmlFor="nombreDeUsuario">USUARIO</label>
+      <input type="text" name="usuario" required />
+
+      <label htmlFor="[password]">CONTRASEÑA</label>
+      <input type="password" name="password" required />
+
+      <button type="submit">Ingresar</button>
+
+      {{#if error}}
+        <p>Usuario o clave incorrectos</p>
+      {{/if}}
+
+    </form>
+
+  </div>
+</body>

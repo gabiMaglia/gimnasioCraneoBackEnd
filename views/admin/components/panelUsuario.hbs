@@ -1,0 +1,54 @@
+<div class="container holder">
+  <div style="text-align: right ;" class="holder">
+    <!-- Atras Button -->
+    <a href="/admin/panelPrincipal"><button
+        class="btn btn-danger"
+      >Atras</button></a>
+  </div>
+  <form action="/admin/panelUsuario/modificar" method="post" class="holder">
+    <div class="inputs">
+      <div class="form-group">
+        <!-- Usuario -->
+        <label for="usuario" class="control-label">Usuario</label>
+        <input
+          type="text"
+          class="form-control"
+          id="usuario"
+          name="usuario"
+          value={{infoUsuario.usuario}}
+        />
+      </div>
+      <div class="form-group">
+        <!-- Old Password -->
+        <label for="Oldpass" class="control-label">Contraseña</label>
+        <input type="text" class="form-control" id="oldPass" name="oldPass" />
+      </div>
+      <div class="form-group">
+        <!-- New Password -->
+        <label for="password" class="control-label">Nueva contraseña</label>
+        <input type="text" class="form-control" id="password" name="newPass" />
+      </div>
+      <div class="form-group">
+        <!-- Dni -->
+        <label for="dni" class="control-label">Dni</label>
+        <input
+          type="text"
+          class="form-control"
+          id="dni"
+          name="dni"
+          readonly="readonly"
+          value={{infoUsuario.dni}}
+        />
+      </div>
+      <div class="form-group">
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-danger mt-3 mb-5">
+          Modificar
+        </button>
+      </div>
+      {{#if msj}}
+        <h4 style="color: white;">{{msj}}</h4>
+      {{/if}}
+    </div>
+  </form>
+</div>
