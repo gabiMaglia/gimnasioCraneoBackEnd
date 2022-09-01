@@ -19,14 +19,16 @@
 -- Table structure for table `alumnos_asistenca_db`
 --
 
+use heroku_db9faa5b6aa0228;
+
 DROP TABLE IF EXISTS `alumnos_asistenca_db`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `alumnos_asistenca_db` (
   `dni_alumno` int NOT NULL,
   `Horario` varchar(45) NOT NULL,
   PRIMARY KEY (`dni_alumno`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +46,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `alumnos_db`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `alumnos_db` (
   `id_alumno` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
@@ -62,7 +64,7 @@ CREATE TABLE `alumnos_db` (
   `facebookAdd` varchar(45) DEFAULT NULL,
   `instagramAdd` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_alumno`,`dni`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,7 +83,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `docentes_db`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `docentes_db` (
   `id_docente` int NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
@@ -98,7 +100,7 @@ CREATE TABLE `docentes_db` (
   `modificado_por` text,
   `permiso` varchar(45) NOT NULL,
   PRIMARY KEY (`id_docente`,`dni`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,14 +119,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `horarios_db`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `horarios_db` (
   `id_horario` int NOT NULL AUTO_INCREMENT,
   `dias_dbcol` text NOT NULL,
   `horarios_dbcol` text NOT NULL,
   `modificado_por` text,
   PRIMARY KEY (`id_horario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +145,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `rutinas_rm_db`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `rutinas_rm_db` (
   `dni` int NOT NULL,
   `nombre` varchar(45) NOT NULL,
@@ -153,7 +155,7 @@ CREATE TABLE `rutinas_rm_db` (
   `rm_ej3` varchar(45) DEFAULT NULL,
   `rm_ej4` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`dni`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +173,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `usuarios_db`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `usuarios_db` (
   `id_usuario` int NOT NULL AUTO_INCREMENT,
   `permiso` varchar(45) DEFAULT NULL,
@@ -179,7 +181,7 @@ CREATE TABLE `usuarios_db` (
   `usuario` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id_usuario`,`dni`,`usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
