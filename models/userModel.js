@@ -11,6 +11,16 @@ async function getUserByUsernameAndPassword(user, password) {
     throw error;
   }
 }
+async function getAll() {
+  try {
+    const query =
+      "select * from usuarios_db ";
+    const rows = await pool.query(query);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
 
 async function getUserById(id) {
   try{
@@ -55,4 +65,4 @@ async function modificarUsuario(obj, id){
   }
 }
 
-module.exports = { getUserByUsernameAndPassword, getUserCredential, getUserById, modificarUsuario, checkPassword };
+module.exports = { getUserByUsernameAndPassword, getUserCredential, getUserById, modificarUsuario, checkPassword, getAll };

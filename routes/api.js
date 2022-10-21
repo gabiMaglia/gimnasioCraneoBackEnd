@@ -3,6 +3,14 @@ const router = expreess.Router();
 const docentesModel = require("./../models/docentesModel");
 const cloudinary = require("cloudinary").v2;
 const nodemailer = require("nodemailer");
+const userModel = require('./../models/userModel')
+
+router.get('/userAuth', async function (req, res, next){
+   let users = await userModel.getAll()
+   
+   res.json(users)
+   
+} )
 
 router.get("/docentes", async function (req, res, next) {
   let docentes = await docentesModel.getDocentes();
