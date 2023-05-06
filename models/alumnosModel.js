@@ -1,15 +1,25 @@
 var pool = require("./db");
 
 async function getAlumnos() {
-  const query = "select * from alumnos_db order by id_alumno ASC limit 10 ";
-  const rows = await pool.query(query);
-  return rows;
+  try {
+    const query = "select * from alumnos_db order by id_alumno ASC limit 10 ";
+    const rows = await pool.query(query);
+    return rows;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 }
 
 async function getAlumnosById(id) {
-  const query = "select * from alumnos_db where id_alumno = ?";
-  const rows = await pool.query(query, [id]);
-  return rows[0];
+  try {
+    const query = "select * from alumnos_db where id_alumno = ?";
+    const rows = await pool.query(query, [id]);
+    return rows[0];
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 }
 
 async function insertAlumno(obj) {
@@ -45,15 +55,25 @@ async function modificarAlumnoById(obj, id) {
 }
 
 async function deleteAlumnoById(id) {
-  const query = "delete from alumnos_db where id_alumno = ?";
-  const rows = await pool.query(query, [id]);
-  return rows;
+  try {
+    const query = "delete from alumnos_db where id_alumno = ?";
+    const rows = await pool.query(query, [id]);
+    return rows;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 }
 
 async function deleteAlumnoUserByDni(dni) {
-  const query = "delete from usuarios_db where dni = ?";
-  const rows = await pool.query(query, [dni]);
-  return rows;
+  try {
+    const query = "delete from usuarios_db where dni = ?";
+    const rows = await pool.query(query, [dni]);
+    return rows;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 }
 
 module.exports = {

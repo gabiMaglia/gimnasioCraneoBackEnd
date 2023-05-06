@@ -3,38 +3,29 @@ const router = expreess.Router();
 const docentesModel = require("./../models/docentesModel");
 const cloudinary = require("cloudinary").v2;
 const nodemailer = require("nodemailer");
-const userModel = require('./../models/userModel')
+const userModel = require("./../models/userModel");
 
-router.get('/userAuth', async function (req, res, next){
-   let users = await userModel.getAll()
-   
-   res.json(users)
-   
-} )
+router.get("/userAuth", async function (req, res, next) {
+  let users = await userModel.getAll();
+
+  res.json(users);
+});
 
 router.get("/docentes", async function (req, res, next) {
-  let docentes = await docentesModel.getDocentes();
+  try {
+    let docentes = await docentesModel.getDocentes();
 
-  docentes = docentes.map((docentes) => {
-    if (docentes.foto) {
-      const foto = cloudinary.url(docentes.foto, {
-        width: 220,
-        height: 320,
-        crop: "fill",
-      });
-      return {
-        ...docentes,
-        foto,
-      };
-    } else {
+    docentes = docentes.map((docentes) => {
       return {
         ...docentes,
         foto: "https://res.cloudinary.com/atlasair/image/upload/v1661037957/craneo_black_igfvsz.png",
       };
-    }
-  });
+    });
 
-  res.json(docentes);
+    res.json(docentes);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.post("/contacto", async (req, res) => {
@@ -51,10 +42,8 @@ router.post("/contacto", async (req, res) => {
     port: process.env.SMTP_PORT,
     auth: {
       user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS
+      pass: process.env.SMTP_PASS,
     },
-
-    
   });
   await transport.sendMail(mail);
 
